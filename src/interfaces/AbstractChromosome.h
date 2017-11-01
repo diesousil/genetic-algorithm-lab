@@ -1,22 +1,22 @@
 #ifndef ABSTRACTCHROMOSOME_H
-#define ABSTRACTCHROMOSOME_H
+	#define ABSTRACTCHROMOSOME_H
 
-class AbstractChromosome
-{
-private:
-	double* genes;
-	unsigned int size;
+	class AbstractChromosome
+	{
+	private:
+		double* genes;
+		unsigned int size;
 
-public:
+	public:
 
-	virtual AbstractChromosome(int size, double*genes);
-	virtual AbstractChromosome(int size);
-	virtual AbstractChromosome();
-	virtual ~AbstractChromosome();
+		AbstractChromosome(unsigned int size, double*genes);
+		AbstractChromosome(unsigned int size);
+		AbstractChromosome();
+		virtual ~AbstractChromosome();
 
-	virtual void setSize();
-	virtual void setGenes(double* genes);
-	virtual void setGene(int index, double geneValue);
-	virtual double* getGenes();
-	virtual int* getGenes();
-};
+		virtual void setSize(unsigned int);
+		virtual void setGenes(unsigned int size, double* genes);
+		virtual void setGene(unsigned int index, double geneValue);
+		virtual double* getGenes();
+	};
+#endif

@@ -1,19 +1,22 @@
 #ifndef ABSTRACTFITNESSFUNCTION_H
-#define ABSTRACTFITNESSFUNCTION_H
+	#define ABSTRACTFITNESSFUNCTION_H
 
-#include "AbstractChromosome.h"
+	#include "AbstractChromosome.h"
 
-class AbstractFitnessFunction
-{
+	class AbstractFitnessFunction
+	{
 
-private:
-	AbstractChromosome* oChromosome;
+	private:
+		AbstractChromosome* oChromosome;
 
-public:
-	virtual AbstractFitnessFunction(AbstractChromosome*);
-	virtual ~AbstractFitnessFunction();
+	public:
+		AbstractFitnessFunction();
+		AbstractFitnessFunction(AbstractChromosome*);
+		virtual ~AbstractFitnessFunction();
 
-	virtual void setChromosome(AbstractChromosome*);
-	virtual double calculate();
+		virtual void setChromosome(AbstractChromosome*);
+		virtual double calculate();
 
-};
+	};
+
+#endif

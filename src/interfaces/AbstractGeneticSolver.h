@@ -1,69 +1,72 @@
 #ifndef ABSTRACTGENETICSOLVER_H
-#define ABSTRACTGENETICSOLVER_H
+	#define ABSTRACTGENETICSOLVER_H
 
-#include "AbstractChromosome.h"
-#include "AbstractCrossoverOperator.h"
-#include "AbstractFitnessFunction.h"
-#include "AbstractMutationOperator.h"
-#include "AbstractSelectionOperator.h"
-#include "AbstractInitialPopulationGenerator.h"
+	#include "AbstractChromosome.h"
+	#include "AbstractCrossoverOperator.h"
+	#include "AbstractFitnessFunction.h"
+	#include "AbstractMutationOperator.h"
+	#include "AbstractSelectionOperator.h"
+	#include "AbstractInitialPopulationGenerator.h"
 
-class AbstractGeneticSolver
-{
-private:
+	class AbstractGeneticSolver
+	{
+	private:
 
-	AbstractFitnessFunction* oFitnessOperator;
-	AbstractSelectionOperator* oSelectionOperator;
-	AbstractCrossoverOperator* oCrossoverOperator;
-	AbstractMutationOperator* oMutationOperator;
-	AbstractChromosome** oPopulation;
-	AbstractInitialPopulationGenerator* oInitialPopulationGenerator;
-	unsigned int maximumIterations;
-	short mutationLikelihood;
-	unsigned int iteration;
+		AbstractFitnessFunction* oFitnessOperator;
+		AbstractSelectionOperator* oSelectionOperator;
+		AbstractCrossoverOperator* oCrossoverOperator;
+		AbstractMutationOperator* oMutationOperator;
+		AbstractChromosome** oPopulation;
+		AbstractInitialPopulationGenerator* oInitialPopulationGenerator;
+		unsigned int maximumIterations;
+		short mutationLikelihood;
+		unsigned int iteration;
 
 
-public:
-	virtual AbstractGeneticSolver();
+	public:
 
-	virtual AbstractGeneticSolver(AbstractFitnessFunction *,
-								  AbstractSelectionOperator*,
-								  AbstractCrossoverOperator*,
-								  AbstractMutationOperator*,
-								  AbstractChromosome**,
-								  short mutationLikelihood,
-								  unsigned int maximumIterations);
+		AbstractGeneticSolver();
 
-	virtual AbstractGeneticSolver(AbstractSelectionOperator*,
-								  AbstractCrossoverOperator*,
-								  unsigned int maximumIterations);
+		AbstractGeneticSolver(AbstractFitnessFunction *,
+							  AbstractSelectionOperator*,
+							  AbstractCrossoverOperator*,
+							  AbstractMutationOperator*,
+							  AbstractChromosome**,
+							  short mutationLikelihood,
+							  unsigned int maximumIterations);
 
-	virtual ~AbstractGeneticSolver();
+		AbstractGeneticSolver(AbstractSelectionOperator*,
+							  AbstractCrossoverOperator*,
+							  unsigned int maximumIterations);
 
-	virtual void setFitnessFunction(AbstractFitnessFunction*);
-	virtual AbstractFitnessFunction* getFitnessFunction();
+		virtual ~AbstractGeneticSolver();
 
-	virtual void setSelectionOperator(AbstractSelectionOperator*);
-	virtual AbstractFitnessFunction* getSelectionOperator();
+		virtual void setFitnessFunction(AbstractFitnessFunction*);
+		virtual AbstractFitnessFunction* getFitnessFunction();
 
-	virtual void setCrossoverOperator(AbstractCrossoverOperator*);
-	virtual AbstractCrossoverOperator* getCrossoverOperator();
+		virtual void setSelectionOperator(AbstractSelectionOperator*);
+		virtual AbstractFitnessFunction* getSelectionOperator();
 
-	virtual void setMutationOperator(AbstractMutationOperator*);
-	virtual AbstractMutationOperator* getMutationOperator();
+		virtual void setCrossoverOperator(AbstractCrossoverOperator*);
+		virtual AbstractCrossoverOperator* getCrossoverOperator();
 
-	virtual void setPopulation(AbstractChromosome**);
-	virtual AbstractChromosome** getPopulation();
+		virtual void setMutationOperator(AbstractMutationOperator*);
+		virtual AbstractMutationOperator* getMutationOperator();
 
-	virtual void setMutationLikelihood(short mutationLikelihood);
-	virtual short getMutationLikelihood();
+		virtual void setPopulation(AbstractChromosome**);
+		virtual AbstractChromosome** getPopulation();
 
-	virtual void setMaximumIterations(unsigned int maximumIterations);
-	virtual unsigned int getMaximumIterations();
+		virtual void setMutationLikelihood(short mutationLikelihood);
+		virtual short getMutationLikelihood();
 
-	virtual void setInitialPopulationGenerator(AbstractInitialPopulationGenerator*);
-	virtual AbstractInitialPopulationGenerator* getInitialPopulationGenerator();
+		virtual void setMaximumIterations(unsigned int maximumIterations);
+		virtual unsigned int getMaximumIterations();
 
-	virtual void run();
+		virtual void setInitialPopulationGenerator(AbstractInitialPopulationGenerator*);
+		virtual AbstractInitialPopulationGenerator* getInitialPopulationGenerator();
 
-};
+		virtual void run();
+
+	};
+
+#endif

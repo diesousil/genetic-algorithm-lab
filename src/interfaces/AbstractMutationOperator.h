@@ -1,17 +1,23 @@
 #ifndef ABSTRACTMUTATIONOPERATOR_H
-#define ABSTRACTMUTATIONOPERATOR_H
+	#define ABSTRACTMUTATIONOPERATOR_H
 
-class AbstractMutationOperator
-{
-private:
-	AbstractChromosome* oChromosome;
+	#include "AbstractChromosome.h"
 
-public:
-	virtual AbstractMutationOperator(AbstractChromosome*);
-	virtual ~AbstractMutationOperator();
+	class AbstractMutationOperator
+	{
+	private:
+		AbstractChromosome* oChromosome;
 
-	virtual void setChromosome(AbstractChromosome*);
-	virtual AbstractChromosome* mutate();
+	public:
+
+		AbstractMutationOperator();
+		AbstractMutationOperator(AbstractChromosome*);
+		virtual ~AbstractMutationOperator();
+
+		virtual void setChromosome(AbstractChromosome*);
+		virtual AbstractChromosome* mutate();
 
 
-};
+	};
+
+#endif

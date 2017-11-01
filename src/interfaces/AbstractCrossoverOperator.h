@@ -1,28 +1,30 @@
 #ifndef ABSTRACTCROSSOVEROPERATOR_H
-#define ABSTRACTCROSSOVEROPERATOR_H
+	#define ABSTRACTCROSSOVEROPERATOR_H
 
-#include "AbstractCrossoverOperator.h"
+	#include "AbstractChromosome.h"
 
-class AbstractCrossoverOperator
-{
-private:
-	AbstractChromosome** oParents;
+	class AbstractCrossoverOperator
+	{
+	private:
+		AbstractChromosome** oParents;
 
-public:
+	public:
 
-	virtual AbstractCrossoverOperator(AbstractChromosome*);
-	virtual ~AbstractCrossoverOperator();
+		AbstractCrossoverOperator();
+		AbstractCrossoverOperator(AbstractChromosome**);
+		virtual ~AbstractCrossoverOperator();
 
-	virtual void setParents(AbstractChromosome**);
-	virtual AbstractChromosome** getParents();
+		virtual void setParents(AbstractChromosome**);
+		virtual AbstractChromosome** getParents();
 
-	virtual void setFirstParent(AbstractChromosome*);
-	virtual AbstractChromosome* getFirstParent();
+		virtual void setFirstParent(AbstractChromosome*);
+		virtual AbstractChromosome* getFirstParent();
 
-	virtual void setSecondParent(AbstractChromosome*);
-	virtual AbstractChromosome* getSecondParent();
+		virtual void setSecondParent(AbstractChromosome*);
+		virtual AbstractChromosome* getSecondParent();
 
-	virtual AbstractChromosome* generateNewChild();
+		virtual AbstractChromosome* generateNewChild();
 
+	};
 
-};
+#endif
